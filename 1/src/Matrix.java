@@ -24,8 +24,12 @@ public class Matrix {
                     System.out.print("Make sure that what your input or content in file only is number\n");
                 }
             }else if("input".equalsIgnoreCase(choice)) {
-                model = new InputModel();
-                model.execute();
+                try {
+                    model = new InputModel();
+                    model.execute();
+                }catch (NumberFormatException n){
+                    System.out.print("Input a number please\n");
+                }
             }else if("exit".equalsIgnoreCase(choice)){
                 System.exit(0);
             }
