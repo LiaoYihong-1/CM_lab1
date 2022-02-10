@@ -32,7 +32,6 @@ public class MatrixBuilder {
      */
     public Matrix preparedMainMatrixs(){
         for(int i = 0; i<matrixProduct.getColumns()-1; i++){
-            double[] origin = matrixProduct.getLine(i);
             //choose main elements
             for(int j=i+1;j< matrixProduct.getRows();j++){
                 if(matrixProduct.getElement(i,i)<matrixProduct.getElement(j,i)){
@@ -41,6 +40,7 @@ public class MatrixBuilder {
                 }
             }
             //get triangle
+            double[] origin = matrixProduct.getLine(i);
             for(int j=i+1;j< matrixProduct.getRows();j++){
                 matrixProduct.mulLine(-matrixProduct.getElement(j,i)/matrixProduct.getElement(i,i),i );
                 matrixProduct.addLine(i,j);
