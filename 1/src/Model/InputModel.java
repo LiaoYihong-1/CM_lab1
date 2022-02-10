@@ -17,7 +17,7 @@ public class InputModel extends Model{
     }
 
     @Override
-    protected void readMatrix() throws InputUnexpectedException{
+    protected void readMatrix() throws InputUnexpectedException,NumberFormatException{
         //check rows and columns
         System.out.print("Input model running:\n");
         System.out.print("Input rank:\n");
@@ -30,7 +30,6 @@ public class InputModel extends Model{
             }
         }catch (NumberFormatException e){
             System.out.print("Input a number please:\n");
-            System.exit(1);
         }
         //set matrix
         matrix = new Matrix(rank,rank+1);
