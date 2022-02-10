@@ -70,6 +70,9 @@ public abstract class Model {
         }
     }
 
+    /**
+    *Main part of method Gaussian
+    **/
     protected double[] solver(Matrix triangle) {
         int j = 0;
         for (int i = triangle.getRows() - 1; i >= 0; i--) {
