@@ -1,6 +1,9 @@
 package Model;
 
 public class MatrixBuilder {
+    /**
+     * Source matrix never be changed
+     */
     private final Matrix matrixSource = new Matrix();
     private final Matrix triangle = new Matrix();
     private final Matrix matrixProduct = new Matrix();
@@ -30,9 +33,11 @@ public class MatrixBuilder {
             //get triangle
             double[] origin = matrixProduct.getLine(i);
             for(int j=i+1;j< matrixProduct.getRows();j++){
-                matrixProduct.mulLine(-matrixProduct.getElement(j,i)/matrixProduct.getElement(i,i),i );
-                matrixProduct.addLine(i,j);
-                matrixProduct.setLine(origin,i);
+                if(matrixProduct.getElement(i,i)!=0.0) {
+                    matrixProduct.mulLine(-matrixProduct.getElement(j, i) / matrixProduct.getElement(i, i), i);
+                    matrixProduct.addLine(i, j);
+                    matrixProduct.setLine(origin, i);
+                }
             }
         }
         triangle.init(matrixProduct);
