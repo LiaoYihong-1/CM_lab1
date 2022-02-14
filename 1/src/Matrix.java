@@ -1,4 +1,5 @@
 import Model.*;
+import exceptions.FileFormatUnexpectedException;
 import exceptions.InputUnexpectedException;
 
 import java.io.FileNotFoundException;
@@ -18,7 +19,7 @@ public class Matrix {
                     model.execute();
                 } catch (FileNotFoundException f) {
                     System.out.print("No such file\n");
-                } catch (InputUnexpectedException e) {
+                } catch (InputUnexpectedException|FileFormatUnexpectedException e) {
                     System.out.print(e.getMessage());
                 } catch (NumberFormatException e) {
                     System.out.print("Make sure that what your input or content in file only is number\n");
