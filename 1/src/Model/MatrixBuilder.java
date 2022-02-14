@@ -10,18 +10,6 @@ public class MatrixBuilder {
         matrixProduct.init(matrixSource);
     }
 
-    public Matrix getMatrixProduct() {
-        return matrixProduct;
-    }
-    public Matrix getMatrixSource(){
-        return this.matrixSource;
-    }
-
-    public void reset(){
-        matrixProduct.init(matrixSource);
-        k=0;
-    }
-
     public Matrix getTriangle() {
         return triangle;
     }
