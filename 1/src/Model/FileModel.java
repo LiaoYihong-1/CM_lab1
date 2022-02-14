@@ -53,8 +53,8 @@ public class FileModel extends Model{
         bufferedReader.reset();
         for(int i = 0; i<rows; i++){
             s = bufferedReader.readLine();
-            if(s.split(" ").length< matrix.getColumns()) {
-                throw new FileFormatUnexpectedException("Make sure your matrix format is assessable");
+            if(s.split(" ").length != matrix.getColumns()) {
+                throw new FileFormatUnexpectedException("Make sure your matrix format is assessable\n");
             }
             String[] nums = s.split(" ");
             for(int j = 0;j<columns;j++){
